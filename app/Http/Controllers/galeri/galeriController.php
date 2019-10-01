@@ -36,7 +36,7 @@ class galeriController extends Controller
                     $name = 'galeri-'.uniqid().".".$request->foto->getClientOriginalExtension();
                     $path = '/storage/'.$name;
                     \File::put(public_path().$path, file_get_contents($request->foto->getRealPath()));
-                    $data->direktori = '/storage/'.$name;
+                    $data->direktori = '/storage/storage/'.$name;
                 }else{
                     return redirect()->back()->with('alert-fail','Foto harus berformat jpg / jpeg / png')->withInput();
                 } 

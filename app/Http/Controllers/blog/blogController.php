@@ -78,7 +78,7 @@ class blogController extends Controller
                     $name = 'blog-'.uniqid().".".$request->foto->getClientOriginalExtension();
                     $path = '/storage/'.$name;
                     \File::put(public_path().$path, file_get_contents($request->foto->getRealPath()));
-                    $data->foto = '/storage/'.$name;
+                    $data->foto = '/storage/storage/'.$name;
                 }else{
                     return redirect()->back()->with('alert-fail','Foto harus berformat jpg / jpeg / png')->withInput();
                 } 
@@ -109,7 +109,7 @@ class blogController extends Controller
                     $name = 'blog-'.uniqid().".".$request->foto->getClientOriginalExtension();
                     $path = '/storage/'.$name;
                     \File::put(public_path().$path, file_get_contents($request->foto->getRealPath()));
-                    $data->foto = '/storage/'.$name;
+                    $data->foto = '/storage/storage/'.$name;
                 }else{
                     return redirect()->back()->with('alert-fail','Foto harus berformat jpg / jpeg / png')->withInput();
                 } 
