@@ -501,7 +501,7 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="single-blog">
               <div class="single-blog-img">
-                <a href="blog.html">
+                <a href="">
 					<img src="{{ asset($item->foto) }}" alt="">
 				</a>
               </div>
