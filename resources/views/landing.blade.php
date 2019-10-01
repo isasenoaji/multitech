@@ -303,7 +303,7 @@
                 </div>
               </div>
               <div class="team-content text-center">
-                <h4>Hardiansyah S.E</h4>
+                <h4>Sr.Hardiansyah S.E</h4>
                 <p>CEO MTE</p>
               </div>
             </div>
