@@ -1,9 +1,20 @@
 <?php
 
+/**
+ * This file is part of the Carbon package.
+ *
+ * (c) Brian Nesbitt <brian@nesbot.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Carbon\Laravel;
 
 use Carbon\Carbon;
 use Carbon\CarbonImmutable;
+use Carbon\CarbonInterval;
+use Carbon\CarbonPeriod;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Events\EventDispatcher;
@@ -37,8 +48,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $locale = $app->getLocale();
         Carbon::setLocale($locale);
         CarbonImmutable::setLocale($locale);
+        CarbonPeriod::setLocale($locale);
+        CarbonInterval::setLocale($locale);
 
-        // @codeCoverageIgnoreStart
         if (class_exists(IlluminateCarbon::class)) {
             IlluminateCarbon::setLocale($locale);
         }
@@ -51,7 +63,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
                 // Non Carbon class in use in Date facade
             }
         }
-        // @codeCoverageIgnoreEnd
     }
 
     public function register()
