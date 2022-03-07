@@ -15,8 +15,8 @@ class AdminSeeder extends Seeder
     {
         \App\User::create([
             'name'=>'Hardi',
-            'password'=>Hash::make('Hardiansyah'),
-            'email'=>'sales@multitech-eng.com'
+            'password'=>Hash::make('sebuahPassword'),
+            'email'=>'hardi.mte@gmail.com'
         ]);
     }
 }

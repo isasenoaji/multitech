@@ -5,9 +5,9 @@
   <div id="home" class="slider-area">
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
-        <img src="img/slider/slider1.jpg" alt="" title="#slider-direction-1" />
-        <img src="img/slider/slider2.jpg" alt="" title="#slider-direction-2" />
-        <img src="img/slider/slider3.jpg" alt="" title="#slider-direction-3" />
+        <img src="img/slider/background-1.jpeg" alt="" title="#slider-direction-1" />
+        <img src="img/slider/background-2.jpeg" alt="" title="#slider-direction-2" />
+        {{--<img src="img/slider/slider3.jpg" alt="" title="#slider-direction-3" />--}}
       </div>
 
       <!-- direction 1 -->
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <!-- direction 3 -->
+      {{--<!-- direction 3 -->
       <div id="slider-direction-3" class="slider-direction slider-two">
         <div class="container">
           <div class="row">
@@ -81,6 +81,7 @@
           </div>
         </div>
       </div>
+      --}}
     </div>
   </div>
   <!-- End Slider Area -->
@@ -274,63 +275,53 @@
       </div>
       <div class="row">
         <div class="team-top">
-        <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12">
         </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
-					<img src="{{ asset('img/team/CEO.jpeg') }}" alt="">
-				</a>
+        					<img src="{{ asset('img/team/CEO.jpeg') }}" alt="">
+        				</a>
                 <div class="team-social-icon text-center">
                   <ul>
                     <li>
                     	<a href="#">
-							<i class="fa fa-facebook"></i>
-						</a>
+          							<i class="fa fa-facebook"></i>
+          						</a>
                     </li>
                     <li>
                     	<a href="#">
-							<i class="fa fa-twitter"></i>
-						</a>
-                    </li>
-                    <li>
-                    	<a href="#">
-							<i class="fa fa-instagram"></i>
-						</a>
+          							<i class="fa fa-instagram"></i>
+          						</a>
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="team-content text-center">
-                <h4>Sr.Hardiansyah S.E</h4>
+                <h4>Hardiansyah S.E</h4>
                 <p>CEO MTE</p>
               </div>
             </div>
           </div>
           <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
+          {{--<div class="col-md-3 col-sm-3 col-xs-12">
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
-					<img src="img/team/4.jpg" alt="">
-				</a>
+        					<img src="img/team/4.jpg" alt="">
+        				</a>
                 <div class="team-social-icon text-center">
                   <ul>
                     <li>
                     	<a href="#">
-							<i class="fa fa-facebook"></i>
-						</a>
+          							<i class="fa fa-facebook"></i>
+          						</a>
                     </li>
                     <li>
                     	<a href="#">
-							<i class="fa fa-twitter"></i>
-						</a>
-                    </li>
-                    <li>
-                    	<a href="#">
-							<i class="fa fa-instagram"></i>
-						</a>
+          							<i class="fa fa-instagram"></i>
+          						</a>
                     </li>
                   </ul>
                 </div>
@@ -342,6 +333,7 @@
             </div>
           </div>
           <!-- End column -->
+          --}}
         </div>
       </div>
     </div>
@@ -423,7 +415,7 @@
         @endif
         <div class="awesome-menu">
           <center>
-            <a class="sus-btn" href="{{ route('galeri') }}">See More</a>
+            <a class="sus-btn" style="margin: 20px 0px;" href="{{ route('galeri') }}">See More</a>
           </center>
         </div>
       </div>
@@ -461,15 +453,6 @@
                   </div>
                 </div>
                 <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Fleming</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
               </div>
             </div>
             <!-- End testimonials end -->
@@ -502,34 +485,37 @@
             <div class="single-blog">
               <div class="single-blog-img">
                 <a href="">
-					<img src="{{ asset($item->foto) }}" alt="">
-				</a>
+        					<img src="{{ asset($item->foto) }}" alt="">
+        				</a>
               </div>
               <div class="blog-meta">
               	<span class="comments-type">
-					<i class="fa fa-hashtag"></i>
-					<a href="#">{{ $item->Kategori->kategori}}</a>
-				</span>
+        					<i class="fa fa-hashtag"></i>
+        					<a href="#">{{ $item->Kategori->kategori}}</a>
+        				</span>
                 <span class="date-type">
-					<i class="fa fa-calendar"></i>{{ $item->tanggal }} / {{ $item->jam }}
-				</span>
+        					<i class="fa fa-calendar"></i>{{ $item->tanggal }} / {{ $item->jam }}
+        				</span>
               </div>
               <div class="blog-text">
                 <h4>
                 	<a href="blog.html">{{ $item->judul }}</a>
-				</h4>
+				        </h4>
                 <p>
                   {{ $item->deskripsi }}
                 </p>
               </div>
-              	<span>
-					<a href="{{ route('blog') }}" class="ready-btn">Read more</a>
-				</span>
             </div>
             <!-- Start single blog -->
           </div>
           @endforeach
           @endif
+
+          <div class="awesome-menu">
+            <center>
+              <a class="sus-btn" style="margin: 20px 0px;" href="{{ route('blog') }}">See More</a>
+            </center>
+          </div>
           <!-- End Left Blog-->
         </div>
       </div>
@@ -581,8 +567,8 @@
               <div class="single-icon">
                 <i class="fa fa-envelope-o"></i>
                 <p>
-                  Email: hardi@multitechnic.com<br>
-                  <span>Web: www.multitech-eng.com</span>
+                  Email: hardi.mte@gmail.com<br>
+                  <span>Web: www.multitechnic.id</span>
                 </p>
               </div>
             </div>
@@ -605,7 +591,7 @@
           <!-- Start Google Map -->
           <div class="col-md-6 col-sm-6 col-xs-12">
             <!-- Start Map -->
-            <iframe width="100%" height="380" id="gmap_canvas" src="https://maps.google.com/maps?q=CV%20MULTITECHNIC%20%26%20ENGINEERING&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <iframe width="100%" height="380" id="gmap_canvas" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=-6.1927134,106.8665691+(mu)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 
             <!-- End Map -->
           </div>
@@ -643,31 +629,31 @@
     </div>
   </div>
   <script src="{{ asset('js/sweetalert.min.js') }}"></script>
-                    @if(session()->has('alert-warning'))
-                        <div class="alert alert-warning">
-                            {{ session()->get('alert-warning') }}
-                        </div>
-                    @elseif(session()->has('alert-success'))
-                        <script>
-                            swal({
-                                title: "Berhasil",
-                                text: "{{ session()->get('alert-success') }}",
-                                icon: "success"
-                            })
-                        </script>
-                    @elseif(session()->has('alert-fail'))
-                        <script>
-                            swal({
-                                title: "Gagal",
-                                text: "{{ session()->get('alert-fail') }}",
-                                icon: "error"
-                            })
-                        </script>
-                    @elseif(session()->has("alert-info"))
-                        <div class="alert alert-info">
-                            {{ session()->get('alert-info') }}
-                        </div>
-                    @endif
+  @if(session()->has('alert-warning'))
+      <div class="alert alert-warning">
+          {{ session()->get('alert-warning') }}
+      </div>
+  @elseif(session()->has('alert-success'))
+      <script>
+          swal({
+              title: "Berhasil",
+              text: "{{ session()->get('alert-success') }}",
+              icon: "success"
+          })
+      </script>
+  @elseif(session()->has('alert-fail'))
+      <script>
+          swal({
+              title: "Gagal",
+              text: "{{ session()->get('alert-fail') }}",
+              icon: "error"
+          })
+      </script>
+  @elseif(session()->has("alert-info"))
+      <div class="alert alert-info">
+          {{ session()->get('alert-info') }}
+      </div>
+  @endif
   <!-- End Contact Area -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
   <script>

@@ -40,7 +40,7 @@
                 </p>
                 <div class="footer-contacts">
                   <p><span>Telp/WA:</span> +62 817 0882 459</p>
-                  <p><span>Email:</span> hardi@multitechnic.com</p>
+                  <p><span>Email:</span> hardi@multitechnic.id</p>
                   <p><span>Working Hours:</span> 7am-5pm</p>
                 </div>
               </div>
@@ -72,11 +72,11 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="copyright text-center">
               <p>
-                &copy; Copyright <strong>CyDev</strong>. All Rights Reserved
+                &copy; Copyright <strong>Multitechnic-Eng</strong>. All Rights Reserved
               </p>
             </div>
             <div class="credits">
-              Designed by <a href="https://cydeveloper.com/">Cyber Developer</a>
+              Designed by <a href="https://akfisa.com/">Akfisa Nusantara</a>
             </div>
           </div>
         </div>
