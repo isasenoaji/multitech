@@ -7,7 +7,7 @@
       <div id="ensign-nivoslider" class="slides">
         <img src="img/slider/background-1.jpeg" alt="" title="#slider-direction-1" />
         <img src="img/slider/background-2.jpeg" alt="" title="#slider-direction-2" />
-        {{--<img src="img/slider/slider3.jpg" alt="" title="#slider-direction-3" />--}}
+        {{--<img src="img/slider/background-3.jpeg" alt="" title="#slider-direction-3" />--}}
       </div>
 
       <!-- direction 1 -->
@@ -57,8 +57,8 @@
           </div>
         </div>
       </div>
-
-      {{--<!-- direction 3 -->
+{{--
+      <!-- direction 3 -->
       <div id="slider-direction-3" class="slider-direction slider-two">
         <div class="container">
           <div class="row">
@@ -70,7 +70,7 @@
                 </div>
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Helping Business Security  & Peace of Mind for Your Family</h1>
+                  <h1 class="title2">Helping Business Ship for Better Life</h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -80,8 +80,7 @@
             </div>
           </div>
         </div>
-      </div>
-      --}}
+      </div> --}}
     </div>
   </div>
   <!-- End Slider Area -->
@@ -102,8 +101,8 @@
           <div class="well-left">
             <div class="single-well">
             	<a href="#">
-					<img src="img/about/1.jpg" alt="">
-				</a>
+      					<img src="img/about/about-1.jpeg" alt="">
+      				</a>
             </div>
           </div>
         </div>
@@ -161,8 +160,8 @@
               <div class="services-details">
                 <div class="single-services">
                 	<a class="services-icon" href="#">
-						<i class="fa fa-ship"></i>
-					</a>
+        						<i class="fa fa-ship"></i>
+        					</a>
                   	<h4>Ship Spare Parts</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -177,8 +176,8 @@
               <div class="services-details">
                 <div class="single-services">
                 	<a class="services-icon" href="#">
-						<i class="fa fa-gears"></i>
-					</a>
+        						<i class="fa fa-gears"></i>
+        					</a>
                   <h4>Marine Diesel Engine</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -194,8 +193,8 @@
               <div class="services-details">
                 <div class="single-services">
                 	<a class="services-icon" href="#">
-						<i class="fa fa-gear"></i>
-					</a>
+        						<i class="fa fa-gear"></i>
+        					</a>
                   <h4>Marine Equipment</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -211,8 +210,8 @@
               <div class="services-details">
                 <div class="single-services">
                 	<a class="services-icon" href="#">
-						<i class="fa fa-university"></i>
-					</a>
+        						<i class="fa fa-university"></i>
+        					</a>
                   <h4>Ship Stores</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -229,8 +228,8 @@
               <div class="services-details">
                 <div class="single-services">
                 	<a class="services-icon" href="#">
-						<i class="fa fa-wrench"></i>
-					</a>
+        						<i class="fa fa-wrench"></i>
+        					</a>
                   <h4>Ships Repairing Service</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -247,8 +246,8 @@
               <div class="services-details">
                 <div class="single-services">
                  	<a class="services-icon" href="#">
-						<i class="fa fa-headphones"></i>
-					</a>
+        						<i class="fa fa-headphones"></i>
+        					</a>
                   <h4>24/7 Support</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -281,7 +280,7 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
-        					<img src="{{ asset('img/team/CEO.jpeg') }}" alt="">
+        					<img src="{{ asset('img/team/ceo-new.jpeg') }}" alt="">
         				</a>
                 <div class="team-social-icon text-center">
                   <ul>
@@ -345,7 +344,7 @@
     <div class="work-us">
       <div class="work-left-text">
         <a href="#">
-			<img src="img/about/2.jpg" alt="">
+			<img src="img/about/about-1.jpeg" alt="">
 		</a>
       </div>
       <div class="work-right-text text-center">
@@ -438,7 +437,7 @@
                 <div class="single-testi">
                   <div class="testi-text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                      Best services and fast! Good Job
                     </p>
                     <h6>Boby</h6>
                   </div>
@@ -447,7 +446,7 @@
                 <div class="single-testi">
                   <div class="testi-text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                      Always professional and detail in work! Five Star!
                     </p>
                     <h6>Jhon</h6>
                   </div>

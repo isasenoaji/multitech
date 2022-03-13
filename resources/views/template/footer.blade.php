@@ -17,14 +17,14 @@
                       <a href="#"><i class="fa fa-facebook"></i></a>
                     </li>
                     <li>
+                      <a href="#"><i class="fa fa-google"></i></a>
+                    </li>
+                    {{--<li>
                       <a href="#"><i class="fa fa-twitter"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-google"></i></a>
-                    </li>
-                    <li>
                       <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </li>
+                    </li>--}}
                   </ul>
                 </div>
               </div>
@@ -40,7 +40,7 @@
                 </p>
                 <div class="footer-contacts">
                   <p><span>Telp/WA:</span> +62 817 0882 459</p>
-                  <p><span>Email:</span> hardi@multitechnic.id</p>
+                  <p><span>Email:</span> hardi.mte@gmail.com</p>
                   <p><span>Working Hours:</span> 7am-5pm</p>
                 </div>
               </div>
