@@ -33,13 +33,13 @@
               <div class="form-group row">
                   <label for="detail" class="col-sm-3 control-label required">Detail</label>
                   <div class="col-sm-8">
-                    <textarea type="text" class="form-control" required name="detail" placeholder="Detail post" id="edt_detail" rows="30"></textarea>
+                    <textarea type="text" class="form-control" required name="detail" placeholder="Detail post" id="edt_detail" rows="20"></textarea>
                   </div> 
               </div>
               <div class="form-group row">
                   <label for="foto" class="col-sm-3 control-label required">Photo</label>
                   <div class="col-sm-8">
-                    <input type="file" name="foto"/ required>
+                    <input type="file" name="foto" class="form-control" required>
                   </div> 
               </div>
               
