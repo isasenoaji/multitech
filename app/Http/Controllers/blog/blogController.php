@@ -141,11 +141,11 @@ class blogController extends Controller
             if (Auth::check()) {
                 $data = blog::find($id);
                 $data->delete();
-                return redirect()->back()->with('alert-success','Success delete post!');
+                return redirect()->route('blog')->with('alert-success','Success delete post!');
             }
-            else return redirect()->back()->with('alert-fail', 'Anda tidak mempunyai Akses');
+            else return redirect()->route('blog')->with('alert-fail', 'Anda tidak mempunyai Akses');
         }catch(\Exception $e){
-            return redirect()->back()->with('alert-fail','Failed delete post! Contact Developer!'); 
+            return redirect()->route('blog')->with('alert-fail','Failed delete post! Contact Developer!'); 
         }
     }
 
