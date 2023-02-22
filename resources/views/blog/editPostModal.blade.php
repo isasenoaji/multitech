@@ -1,5 +1,5 @@
 <div class="modal inmodal fade" id="modal-editPost" tabindex="-1" role="dialog"  aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -33,7 +33,7 @@
               <div class="form-group row">
                   <label for="detail" class="col-sm-3 control-label required">Detail</label>
                   <div class="col-sm-8">
-                    <textarea type="text" class="form-control" required name="detail" placeholder="Detail post" id="edt_detail"></textarea>
+                    <textarea type="text" class="form-control" required name="detail" placeholder="Detail post" id="edt_detail" rows="30"></textarea>
                   </div> 
               </div>
               <div class="form-group row">
