@@ -1,6 +1,6 @@
 @extends('template.index')
 @section('main')
-@include('template.headerLanding')
+@include('template.header')
   <!-- Start Slider Area -->
   <div id="home" class="slider-area">
     <div class="bend niceties preview-2">

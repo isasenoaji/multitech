@@ -67,12 +67,12 @@
                   <!-- start single post -->
                   <div class="recent-single-post">
                     <div class="post-img">
-                        <a href="#">
+                        <a href="{{ route('blog-detail', $item->id) }}">
                             <img src="{{ asset($item->foto) }}" alt="">
                         </a>
                     </div>
                     <div class="pst-content">
-                      <p><a href="#"> {{ $item->judul }}</a></p>
+                      <p><a href="{{ route('blog-detail', $item->id) }}"> {{ $item->judul }}</a></p>
                     </div>
                   </div>
                   <!-- End single post -->
@@ -148,7 +148,7 @@
                     <span class="author-meta"><i class="fa fa-user"></i> <a>Admin</a></span>
                     <span><i class="fa fa-clock-o"></i>{{ date("d M Y", strtotime($data->tanggal)) }}</span>
                     <span>
-                        <i class="fa fa-hashtag"></i><a href="{{route('blog')}}?category={{$data->kategori}}">{{$data->Kategori->kategori}}</a>
+                        <i class="fa fa-hashtag"></i><a href="{{ route('blog', ['category' => $data->Kategori->id]) }}">{{$data->Kategori->kategori}}</a>
                       </span>
                   </div>
                   <div class="entry-content">
