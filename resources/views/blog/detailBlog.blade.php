@@ -152,7 +152,9 @@
                       </span>
                   </div>
                   <div class="entry-content">
-                    <p>{!! $data->detail !!}</p>
+                    <p>
+                        {!! nl2br(e($data->detail)) !!}
+                    </p>
                   </div>
                 </div>
               </article>
