@@ -67,9 +67,9 @@
                   <!-- start single post -->
                   <div class="recent-single-post">
                     <div class="post-img">
-                      <a href="#">
-												<img src="{{ asset($item->direktori) }}" alt="">
-											</a>
+                       <a href="#">
+                            <img src="{{ asset($item->direktori) }}" alt="">
+                        </a>
                     </div>
                     <div class="pst-content">
                       <p><a href="#"> {{ $item->judul }}</a></p>
@@ -84,7 +84,7 @@
             </div>
             <div class="single-blog-page">
               <div class="left-blog">
-                <h4>categories 
+                <h4>categories
                   @if(\Auth::check())
                   <span><button style="float: right;" data-toggle="modal" data-target="#modal-kategori" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Add Category</button></span>
                   @endif
@@ -98,7 +98,7 @@
                     <a>- {{ $item->kategori }}
                     @if(\Auth::check())
                       <div style="float: right;" onclick="return false">
-                        <button type="button" 
+                        <button type="button"
                           data-toggle="modal"
                           data-target="#modal-editKategori"
                           data-id="{{$item->id}}"
@@ -115,7 +115,7 @@
                 </ul>
               </div>
             </div>
-        
+
           </div>
         </div>
         <!-- End left sidebar -->
@@ -195,8 +195,8 @@
 
         var id = button.data('id');
         var url = "{{route('blog-delete-category',':id')}}";
-        e.preventDefault() 
-        swal({              
+        e.preventDefault()
+        swal({
             title: "Are you sure to delete this Category?",
             text: "This action cannot be undone !!",
             icon: "warning",
@@ -209,7 +209,7 @@
                   url = url.replace(':id',id);
                   $('#delete-form').attr('action',url).submit();
                   // alert(url);
-                    // $(e.target).closest('form').attr('action',url).submit();   
+                    // $(e.target).closest('form').attr('action',url).submit();
                 }
                 // else alert('uh');
                 }
@@ -219,11 +219,11 @@
           $("#nav-galeri").addClass("active");
           $('#modal-editKategori').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
-            
+
             var id = button.data('id');
             var namaKategori = button.data('name');
             var keyKategori = button.data('key');
-            
+
             var modal = $(this);
 
             modal.find('.modal-body #edt_idC').val(id);

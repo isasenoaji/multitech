@@ -84,7 +84,7 @@
             </div>
             <div class="single-blog-page">
               <div class="left-blog">
-                <h4>categories 
+                <h4>categories
                   @if(\Auth::check())
                   <span><button style="float: right;" data-toggle="modal" data-target="#modal-kategori" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Add Category</button></span>
                   @endif
@@ -98,7 +98,7 @@
                     <a href="{{route('blog')}}?category={{$item->id}}">- {{ $item->kategori }}
                     @if(\Auth::check())
                       <div style="float: right;" onclick="return false">
-                        <button type="button" 
+                        <button type="button"
                           data-toggle="modal"
                           data-target="#modal-editKategori"
                           data-id="{{$item->id}}"
@@ -115,7 +115,7 @@
                 </ul>
               </div>
             </div>
-        
+
           </div>
         </div>
         <!-- End left sidebar -->
@@ -134,33 +134,33 @@
             @else
             @foreach($blog as $item)
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="single-blog">
-                <div class="single-blog-img">
-                  <a href="{{route('blog-detail',$item->id)}}">
-						        <img src="{{ asset($item->foto) }}" alt="" >
-					        </a>
+                <div class="single-blog">
+                    <div class="single-blog-img">
+                        <a href="{{route('blog-detail',$item->id)}}">
+                            <img src="{{ asset($item->foto) }}" alt="" >
+                        </a>
+                    </div>
+                    <div class="blog-meta">
+                        <span class="comments-type">
+                            <i class="fa fa-hashtag"></i>
+                            <a href="#">{{ $item->Kategori->kategori }}</a>
+                        </span>
+                        <span class="date-type">
+                            <i class="fa fa-calendar"></i>{{ $item->tanggal }} / {{ $item->jam }}
+                        </span>
+                    </div>
+                    <div class="blog-text">
+                        <h4>
+                            <a href="#">{{ substr($item->judul,0,50) }}</a>
+                        </h4>
+                        <p>
+                            {{ \Illuminate\Support\Str::limit(strip_tags($item->detail), 100, '...') }}
+                        </p>
+                    </div>
+                    <span>
+                        <a href="{{ route('blog-detail',$item->id) }}" class="ready-btn">Read more</a>
+                    </span>
                 </div>
-                <div class="blog-meta">
-                  <span class="comments-type">
-						       <i class="fa fa-hashtag"></i>
-					       	 <a href="#">{{ $item->Kategori->kategori }}</a>
-					        </span>
-                  <span class="date-type">
-						        <i class="fa fa-calendar"></i>{{ $item->tanggal }} / {{ $item->jam }}
-					        </span>
-                </div>
-                <div class="blog-text">
-                 	<h4>
-						        <a href="#">{{ substr($item->judul,0,50) }}</a>
-					        </h4>
-                  <p>
-                    {{ $item->detail }}
-                  </p>
-                </div>
-                <span>
-        					<a href="{{ route('blog-detail',$item->id) }}" class="ready-btn">Read more</a>
-        				</span>
-              </div>
             </div>
             @endforeach
             @endif
@@ -195,8 +195,8 @@
 
         var id = button.data('id');
         var url = "{{route('blog-delete-category',':id')}}";
-        e.preventDefault() 
-        swal({              
+        e.preventDefault()
+        swal({
             title: "Are you sure to delete this Category?",
             text: "This action cannot be undone !!",
             icon: "warning",
@@ -209,7 +209,7 @@
                   url = url.replace(':id',id);
                   $('#delete-form').attr('action',url).submit();
                   // alert(url);
-                    // $(e.target).closest('form').attr('action',url).submit();   
+                    // $(e.target).closest('form').attr('action',url).submit();
                 }
                 // else alert('uh');
                 }
@@ -220,11 +220,11 @@
 
         $('#modal-editKategori').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
-            
+
             var id = button.data('id');
             var namaKategori = button.data('name');
             var keyKategori = button.data('key');
-            
+
             var modal = $(this);
 
             modal.find('.modal-body #edt_idC').val(id);

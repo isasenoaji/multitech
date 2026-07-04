@@ -67,9 +67,9 @@
                   <!-- start single post -->
                   <div class="recent-single-post">
                     <div class="post-img">
-                      <a href="#">
-												<img src="{{ asset($item->foto) }}" alt="">
-											</a>
+                        <a href="#">
+                            <img src="{{ asset($item->foto) }}" alt="">
+                        </a>
                     </div>
                     <div class="pst-content">
                       <p><a href="#"> {{ $item->judul }}</a></p>
@@ -84,7 +84,7 @@
             </div>
             <div class="single-blog-page">
               <div class="left-blog">
-                <h4>categories 
+                <h4>categories
                   @if(\Auth::check())
                   <span><button style="float: right;" data-toggle="modal" data-target="#modal-kategori" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Add Category</button></span>
                   @endif
@@ -98,7 +98,7 @@
                     <a>- {{ $item->kategori }}
                     @if(\Auth::check())
                       <div style="float: right;" onclick="return false">
-                        <button type="button" 
+                        <button type="button"
                           data-toggle="modal"
                           data-target="#modal-editKategori"
                           data-id="{{$item->id}}"
@@ -115,7 +115,7 @@
                 </ul>
               </div>
             </div>
-        
+
           </div>
         </div>
         <!-- End left sidebar -->
@@ -132,7 +132,7 @@
                   <h2>{{ $data->judul }}
                     @if(\Auth::check())
                       <div style="float: right;" onclick="return false">
-                        <button type="button" 
+                        <button type="button"
                           data-toggle="modal"
                           data-target="#modal-editPost"
                           data-id="{{$data->id}}"
@@ -152,7 +152,7 @@
                       </span>
                   </div>
                   <div class="entry-content">
-                    <p>{{ $data->detail}}</p>
+                    <p>{!! $data->detail !!}</p>
                   </div>
                 </div>
               </article>
@@ -175,18 +175,18 @@
   <div class="clearfix"></div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
   <script>
-    
+
     function deletekategori(id){
 
-    }; 
+    };
 
     $('.button_deleteKategori').click(function(e){
         var button = $(this);
 
         var id = button.data('id');
         var url = "{{route('blog-delete-category',':id')}}";
-        e.preventDefault() 
-        swal({              
+        e.preventDefault()
+        swal({
             title: "Are you sure to delete this Category?",
             text: "This action cannot be undone !!",
             icon: "warning",
@@ -199,7 +199,7 @@
                   url = url.replace(':id',id);
                   $('#delete-form').attr('action',url).submit();
                   // alert(url);
-                    // $(e.target).closest('form').attr('action',url).submit();   
+                    // $(e.target).closest('form').attr('action',url).submit();
                 }
                 // else alert('uh');
                 }
@@ -211,8 +211,8 @@
         var id = button.data('id');
         var url = "{{route('blog-delete-post',':id')}}";
 
-        e.preventDefault() 
-        swal({              
+        e.preventDefault()
+        swal({
             title: "Are you sure to delete this post??",
             text: "This action cannot be undone !!",
             icon: "warning",
@@ -224,21 +224,21 @@
                 if(willDelete){
                   url = url.replace(':id',id);
                   $('#delete-form').attr('action',url).submit();
-                    // $(e.target).closest('form').attr('action',url).submit();   
+                    // $(e.target).closest('form').attr('action',url).submit();
                 };
                 }
             );
     });
-       
+
     $(document).ready(function(){
         $("#nav-blog").addClass("active");
         $('#modal-editKategori').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
-            
+
             var id = button.data('id');
             var namaKategori = button.data('name');
             var keyKategori = button.data('key');
-            
+
             var modal = $(this);
 
             modal.find('.modal-body #edt_idC').val(id);
@@ -248,12 +248,12 @@
 
         $('#modal-editPost').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
-            
+
             var id = button.data('id');
             var judul = button.data('judul');
             var detail = button.data('detail');
             var kategori = button.data('kategori');
-            
+
             var modal = $(this);
 
             modal.find('.modal-body #edt_idP').val(id);
