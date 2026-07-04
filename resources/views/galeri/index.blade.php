@@ -157,7 +157,7 @@
               <div class="col-md-4 col-sm-4 col-xs-12 {{ $item->Kategori->key }}">
                 <div class="single-awesome-project">
                   <div class="awesome-img">
-                    <a href="#"><img src="{{ asset($item->direktori) }}" alt="" /></a>
+                    <a target="_blank" href="{{ asset($item->direktori) }}"><img src="{{ asset($item->direktori) }}" alt="" /></a>
                     <div class="add-actions text-center">
                       <div class="project-dec">
                         <a class="venobox" data-gall="myGallery" href="{{ asset($item->direktori) }}">

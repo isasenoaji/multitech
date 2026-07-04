@@ -67,9 +67,9 @@
                   <!-- start single post -->
                   <div class="recent-single-post">
                     <div class="post-img">
-                      <a href="{{route('blog-detail',$item->id)}}">
-												<img src="{{ asset($item->foto) }}" alt="">
-											</a>
+                       <a href="{{route('blog-detail',$item->id)}}">
+                            <img src="{{ asset($item->foto) }}" alt="">
+                        </a>
                     </div>
                     <div class="pst-content">
                       <p><a href="{{route('blog-detail',$item->id)}}"> {{ $item->judul }}</a></p>
@@ -136,14 +136,14 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="single-blog">
                     <div class="single-blog-img">
-                        <a href="{{route('blog-detail',$item->id)}}">
+                        <a href="{{ route('blog-detail', $item->id) }}">
                             <img src="{{ asset($item->foto) }}" alt="" >
                         </a>
                     </div>
                     <div class="blog-meta">
                         <span class="comments-type">
                             <i class="fa fa-hashtag"></i>
-                            <a href="#">{{ $item->Kategori->kategori }}</a>
+                            <a href="{{ route('blog', ['category' => $item->Kategori->id]) }}">{{ $item->Kategori->kategori }}</a>
                         </span>
                         <span class="date-type">
                             <i class="fa fa-calendar"></i>{{ $item->tanggal }} / {{ $item->jam }}
@@ -151,14 +151,14 @@
                     </div>
                     <div class="blog-text">
                         <h4>
-                            <a href="#">{{ substr($item->judul,0,50) }}</a>
+                            <a href="{{ route('blog-detail', $item->id) }}">{{ substr($item->judul,0,50) }}</a>
                         </h4>
                         <p>
                             {{ \Illuminate\Support\Str::limit(strip_tags($item->detail), 100, '...') }}
                         </p>
                     </div>
                     <span>
-                        <a href="{{ route('blog-detail',$item->id) }}" class="ready-btn">Read more</a>
+                        <a href="{{ route('blog-detail', $item->id) }}" class="ready-btn">Read more</a>
                     </span>
                 </div>
             </div>

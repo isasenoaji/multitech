@@ -114,7 +114,7 @@
                 <h4 class="sec-head">Multi Technic and Engineering (MTE)</h4>
               </a>
               <p>
-              	We Multitechnic and Engineering (MTE) has grown into a leading in the field of trading for ship spare parts, marine diesel engine, marine equipment, ship stores and ships repairing service since We have established in 2009 at Jakarta, Indonesia.  
+              	We Multitechnic and Engineering (MTE) has grown into a leading in the field of trading for ship spare parts, marine diesel engine, marine equipment, ship stores and ships repairing service since We have established in 2009 at Jakarta, Indonesia.
               </p>
               <ul>
                 <li>
@@ -421,7 +421,7 @@
     </div>
   </div>
   <!-- awesome-portfolio end -->
-  
+
   <!-- Start Testimonials -->
   <div class="testimonials-area">
     <div class="testi-inner area-padding">
@@ -479,29 +479,32 @@
           @if(is_null($blog) or count($blog) == 0)
           <div style="text-align:center">Nothing there latest post!</div>
           @else
-          @foreach($blog as $item)
+          @foreach($blog as $key => $item)
+            @if($key > 2)
+                @break
+            @endif
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="single-blog">
               <div class="single-blog-img">
-                <a href="">
-        					<img src="{{ asset($item->foto) }}" alt="">
-        				</a>
+                <a href="{{ route('blog-detail', $item->id) }}">
+                    <img src="{{ asset($item->foto) }}" alt="">
+                </a>
               </div>
               <div class="blog-meta">
               	<span class="comments-type">
-        					<i class="fa fa-hashtag"></i>
-        					<a href="#">{{ $item->Kategori->kategori}}</a>
-        				</span>
+                    <i class="fa fa-hashtag"></i>
+                    <a href="#">{{ $item->Kategori->kategori}}</a>
+                </span>
                 <span class="date-type">
-        					<i class="fa fa-calendar"></i>{{ $item->tanggal }} / {{ $item->jam }}
-        				</span>
+                    <i class="fa fa-calendar"></i>{{ $item->tanggal }} / {{ $item->jam }}
+                </span>
               </div>
               <div class="blog-text">
                 <h4>
-                	<a href="blog.html">{{ $item->judul }}</a>
-				        </h4>
+                	<a href="{{ route('blog-detail', $item->id) }}">{{ $item->judul }}</a>
+                </h4>
                 <p>
-                  {{ $item->deskripsi }}
+                   {{ $item->deskripsi }}
                 </p>
               </div>
             </div>
@@ -510,11 +513,15 @@
           @endforeach
           @endif
 
-          <div class="awesome-menu">
-            <center>
-              <a class="sus-btn" style="margin: 20px 0px;" href="{{ route('blog') }}">See More</a>
-            </center>
-          </div>
+        <div class="awesome-menu">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <center>
+                        <a class="sus-btn" style="margin: 20px 0px;" href="{{ route('blog') }}">See More</a>
+                    </center>
+                </div>
+            </div>
+        </div>
           <!-- End Left Blog-->
         </div>
       </div>
