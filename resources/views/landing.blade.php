@@ -387,11 +387,11 @@
             @endif
           </div>
         </div>
-        @if(is_null($galeri) or count($galeri)==0)
+        @if(is_null($miniGaleri) or count($miniGaleri)==0)
         	<div style="text-align:center">Nothing there gallery!</div>
         @else
         <div class="awesome-project-content">
-          @foreach($galeri as $item)
+          @foreach($miniGaleri as $item)
           <!-- single-awesome-project start -->
           <div class="col-md-3 col-sm-4 col-xs-12 {{$item->Kategori->key}}">
             <div class="single-awesome-project">
@@ -480,9 +480,6 @@
           <div style="text-align:center">Nothing there latest post!</div>
           @else
           @foreach($blog as $key => $item)
-            @if($key > 2)
-                @break
-            @endif
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="single-blog">
               <div class="single-blog-img">

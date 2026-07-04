@@ -16,11 +16,10 @@ use App\kategori;
 */
 
 Route::get('/', function () {
-	$blog = blog::all();
+	$blog = blog::orderBy('id', 'desc')->take(3)->get();
 	$miniGaleri = galeri::take(6)->get();
-	$galeri = galeri::all();
 	$kategori = kategori::all();
-    return view('landing',compact('blog','galeri','kategori','miniGaleri'));
+    return view('landing', compact('blog','kategori','miniGaleri'));
 })->name('landing');
 
 Auth::routes();
