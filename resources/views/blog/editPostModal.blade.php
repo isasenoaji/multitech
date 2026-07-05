@@ -34,15 +34,15 @@
                   <label for="detail" class="col-sm-3 control-label required">Detail</label>
                   <div class="col-sm-8">
                     <textarea type="text" class="form-control" required name="detail" placeholder="Detail post" id="edt_detail" rows="20"></textarea>
-                  </div> 
+                  </div>
               </div>
               <div class="form-group row">
                   <label for="foto" class="col-sm-3 control-label required">Photo</label>
                   <div class="col-sm-8">
-                    <input type="file" name="foto" class="form-control" required>
-                  </div> 
+                    <input type="file" name="foto" class="form-control">
+                  </div>
               </div>
-              
+
             </div>
             <div class="modal-footer">
               <button type="submit" id="button_editP"  style="margin-bottom:0px" class="btn btn-warning" {{ ( is_null($kategori) or count($kategori) ==0 ) ? 'disabled' : '' }}>Edit</button>

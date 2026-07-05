@@ -1,12 +1,12 @@
 <?php
- 
+
 namespace App\Http\Controllers\blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\blog;
 use App\kategori;
 use App\galeri;
-
+use Exception;
 use Illuminate\Http\Request;
 
 class blogController extends Controller
@@ -28,7 +28,7 @@ class blogController extends Controller
         $recent = blog::take(4)->get();
         $miniGaleri = galeri::take(6)->get();
         $data = blog::find($id);
-        return view('blog.detailBlog',compact('data','kategori','recent','miniGaleri'));   
+        return view('blog.detailBlog',compact('data','kategori','recent','miniGaleri'));
     }
 
     public function createCategory(Request $request){
@@ -42,7 +42,7 @@ class blogController extends Controller
             }
             else return redirect()->back()->with('alert-fail', 'Anda tidak mempunyai Akses');
     	}catch(\Exception $e){
-    		return redirect()->back()->with('alert-fail','Failed add new category! Contact Developer!'); 
+    		return redirect()->back()->with('alert-fail','Failed add new category! Contact Developer!');
     	}
     }
 
@@ -57,7 +57,7 @@ class blogController extends Controller
             }
             else return redirect()->back()->with('alert-fail', 'Anda tidak mempunyai Akses');
         }catch(\Exception $e){
-            return redirect()->back()->with('alert-fail','Failed edit category! Contact Developer!'); 
+            return redirect()->back()->with('alert-fail','Failed edit category! Contact Developer!');
         }
     }
 
@@ -81,20 +81,20 @@ class blogController extends Controller
                     $data->foto = $path;
                 }else{
                     return redirect()->back()->with('alert-fail','Foto harus berformat jpg / jpeg / png')->withInput();
-                } 
+                }
 
                 $data->save();
                 return redirect()->back()->with('alert-success','Success add new post!');
             }
             else return redirect()->back()->with('alert-fail', 'Anda tidak mempunyai Akses atau Data tidak lengkap!');
         }catch(Exception $e){
-            return redirect()->back()->with('alert-fail','Failed add new post! Contact Developer!'); 
+            return redirect()->back()->with('alert-fail','Failed add new post! Contact Developer!');
         }
     }
 
     public function updatePost(Request $request){
         try{
-            if (Auth::check() and $request->hasFile('foto')) {
+            if (Auth::check()) {
                 $data =  blog::find($request->id);
                 $data->judul = $request->judul;
                 $data->kategori = $request->kategori;
@@ -102,24 +102,27 @@ class blogController extends Controller
                 // $data->tanggal = date("Y-m-d");
                 // $data->jam = date("H:m");
 
-                $cek = $data->deleteLinked($data->foto);
-                $picts=['png','jpg','jpeg'];
-                $ext = strtolower($request->foto->getClientOriginalExtension());
-                if(in_array($ext,$picts)){
-                    $name = 'blog-'.uniqid().".".$request->foto->getClientOriginalExtension();
-                    $path = '/storage/'.$name;
-                    \File::put(public_path().$path, file_get_contents($request->foto->getRealPath()));
-                    $data->foto = $path;
-                }else{
-                    return redirect()->back()->with('alert-fail','Foto harus berformat jpg / jpeg / png')->withInput();
-                } 
+                if($request->hasFile('foto')){
+                    $data->deleteLinked($data->foto);
+
+                    $picts=['png','jpg','jpeg'];
+                    $ext = strtolower($request->foto->getClientOriginalExtension());
+                    if(in_array($ext,$picts)){
+                        $name = 'blog-'.uniqid().".".$request->foto->getClientOriginalExtension();
+                        $path = '/storage/'.$name;
+                        \File::put(public_path().$path, file_get_contents($request->foto->getRealPath()));
+                        $data->foto = $path;
+                    }else{
+                        return redirect()->back()->with('alert-fail','Foto harus berformat jpg / jpeg / png')->withInput();
+                    }
+                }
 
                 $data->save();
                 return redirect()->back()->with('alert-success','Success edit post!');
             }
             else return redirect()->back()->with('alert-fail', 'Anda tidak mempunyai Akses atau Data tidak lengkap!');
         }catch(Exception $e){
-            return redirect()->back()->with('alert-fail','Failed to edit post! Contact Developer!'); 
+            return redirect()->back()->with('alert-fail','Failed to edit post! Contact Developer!');
         }
     }
 
@@ -132,7 +135,7 @@ class blogController extends Controller
             }
             else return redirect()->back()->with('alert-fail', 'Anda tidak mempunyai Akses');
         }catch(\Exception $e){
-            return redirect()->back()->with('alert-fail','Failed delete category! Contact Developer!'); 
+            return redirect()->back()->with('alert-fail','Failed delete category! Contact Developer!');
         }
     }
 
@@ -140,12 +143,15 @@ class blogController extends Controller
         try{
             if (Auth::check()) {
                 $data = blog::find($id);
+
+                $data->deleteLinked($data->foto);
+
                 $data->delete();
                 return redirect()->route('blog')->with('alert-success','Success delete post!');
             }
             else return redirect()->route('blog')->with('alert-fail', 'Anda tidak mempunyai Akses');
         }catch(\Exception $e){
-            return redirect()->route('blog')->with('alert-fail','Failed delete post! Contact Developer!'); 
+            return redirect()->route('blog')->with('alert-fail','Failed delete post! Contact Developer!');
         }
     }
 
